@@ -1,13 +1,31 @@
-Jane's user identity is in the Operations OU
-I found that Jane is in the Operations OU, but she's supposed to be in the HR OU because she's a payroll specialist.
-Jane Cooper is currently a member of Operations-Users. She should be a member of HR-Users.
-Jane is having access denied and wrong desktop policy issues because she currently resides in the Operations OU and a member of the Operation-User security group. So when she tries to access certain HR realated resources, her access is being denied. This also translate to her desktop setup looking different because the Operation User ADUC is different from the HR ADUC.
+# Incident Resolution Report — NMG-0047
 
-Ticket number: NMG-0047
-Affected user: Jane Cooper (jcooper@NMG.com)
-Issue reported: Unable to access HR shared resources. Desktop policies and mapped drives differ from teammates.
-Root cause:  I found that Jane is in the Operations OU, but she's supposed to be in the HR OU because she's a payroll specialist. Jane Cooper is currently a member of Operations-Users. She should be a member of HR-Users.
-Fix applied: I moved Jane from the Operations OU to the HR OU. I then removed her from a member of the Operations-Users security group then added her to the HR-Users security group. I did this because her account was wrongfully provisioned which cause access and resource issues.
-Verification: I checked the Members Tab of the HR-User security group and confirmed her name is there.
-Resolved by: Taiwo Olaofe
-Date: 10/16/2026
+**Affected User:** Jane Cooper (jcooper@NMG.com)  
+**Department:** Human Resources (Payroll)  
+**Resolved By:** Taiwo Olaofe  
+**Date:** October 16, 2026
+
+### Issue Reported
+Jane Cooper was unable to access HR shared resources and experienced desktop policy configurations and mapped drives that differed from those of her HR colleagues.
+
+### Investigation & Findings
+Using Active Directory Users and Computers (ADUC), I identified two account configuration issues:
+
+- **Incorrect OU Placement:** Jane's account was located in the Operations Organizational Unit instead of HR.
+- **Incorrect Security Group Membership:** Jane was assigned to `Operations-Users` rather than `HR-Users`.
+
+These configuration errors were consistent with the reported access restrictions and desktop policy discrepancies.
+
+### Root Cause
+Jane's account had been provisioned under the incorrect department, resulting in improper OU placement and security group membership. This configuration prevented her account from aligning with the intended HR access model.
+
+### Corrective Actions
+1. Moved Jane's user account from the Operations OU to the HR OU.
+2. Removed Jane from the `Operations-Users` security group.
+3. Added Jane to the `HR-Users` security group.
+
+### Verification
+Confirmed Jane's updated OU placement in ADUC and verified her membership in `HR-Users` through the group's **Members** tab.
+
+### Resolution Status
+**Active Directory account configuration corrected.** HR resource access, mapped drives, and applied Group Policy settings require separate end-user verification to confirm complete incident resolution.
