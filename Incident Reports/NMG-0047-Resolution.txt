@@ -1,31 +1,34 @@
-# Incident Resolution Report — NMG-0047
+Incident Resolution Report — NMG-0047
+Affected User: Jane Cooper (jcooper@NMG.com)  
+Department: Human Resources (Payroll)  
+Resolved By: Taiwo Olaofe  
+Date: October 16, 2026
 
-**Affected User:** Jane Cooper (jcooper@NMG.com)  
-**Department:** Human Resources (Payroll)  
-**Resolved By:** Taiwo Olaofe  
-**Date:** October 16, 2026
 
-### Issue Reported
+Issue Reported
 Jane Cooper was unable to access HR shared resources and experienced desktop policy configurations and mapped drives that differed from those of her HR colleagues.
 
-### Investigation & Findings
+
+Investigation & Findings
 Using Active Directory Users and Computers (ADUC), I identified two account configuration issues:
-
-- **Incorrect OU Placement:** Jane's account was located in the Operations Organizational Unit instead of HR.
-- **Incorrect Security Group Membership:** Jane was assigned to `Operations-Users` rather than `HR-Users`.
-
+1. Incorrect OU Placement: Jane's account was located in the Operations Organizational Unit instead of HR.
+2. Incorrect Security Group Membership: Jane was assigned to Operations-Users rather than HR-Users.
 These configuration errors were consistent with the reported access restrictions and desktop policy discrepancies.
 
-### Root Cause
+
+Root Cause
 Jane's account had been provisioned under the incorrect department, resulting in improper OU placement and security group membership. This configuration prevented her account from aligning with the intended HR access model.
 
-### Corrective Actions
+
+Corrective Actions
 1. Moved Jane's user account from the Operations OU to the HR OU.
-2. Removed Jane from the `Operations-Users` security group.
-3. Added Jane to the `HR-Users` security group.
+2. Removed Jane from the Operations-Users security group.
+3. Added Jane to the HR-Users security group.
 
-### Verification
-Confirmed Jane's updated OU placement in ADUC and verified her membership in `HR-Users` through the group's **Members** tab.
 
-### Resolution Status
-**Active Directory account configuration corrected.** HR resource access, mapped drives, and applied Group Policy settings require separate end-user verification to confirm complete incident resolution.
+Verification
+Confirmed Jane's updated OU placement in ADUC and verified her membership in HR-Users through the group's Members tab.
+
+
+Resolution Status
+Active Directory account configuration corrected. HR resource access, mapped drives, and applied Group Policy settings require separate end-user verification to confirm complete incident resolution.
