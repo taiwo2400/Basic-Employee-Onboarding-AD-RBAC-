@@ -7,7 +7,7 @@ Northstar Medical Group (NMG), a fictional healthcare organization with over 200
 I built the NMG.com Active Directory domain on Windows Server and established four departmental Organizational Units: Finance, HR, IT, and Operations. I created corresponding security groups to establish a flat Role-Based Access Control (RBAC) structure supporting least-privilege principles. I provisioned 15 user accounts with standardized naming conventions, attributes, and departmental group memberships. I also investigated and corrected a simulated IAM incident involving incorrect OU placement and security group membership, demonstrating structured troubleshooting and access administration.
 
 ## Video Walkthrough
-[Add your video walkthrough link placeholder here. You will record this tomorrow and update this link so visitors can see a live demonstration of your lab environment.]
+(https://www.loom.com/share/0f8c2567c80f4cbba9516a3e0814b548)
 
 ## Tools Used
 * Windows Server
